@@ -1,0 +1,33 @@
+body {
+    background-color: white;
+}
+#city-col {
+    background-color: gray;
+    color: black;
+}
+#input-div {
+    margin: 8px 0px 18px 0px;
+}
+#city-input {
+    line-height: 44px;
+    font-size: 22px;
+}
+.city-div:hover {
+    cursor: pointer;
+}
+#city-header {
+    background: #b3c4c1;
+}
+#current-bg {
+    border-radius: .75rem;
+    box-shadow: 0px 26px 10px -16 px #666666;
+}
+
+.carousel-inner {
+    border-radius: .75rem;
+    box-shadow: 0px 26px 10px -16 px #666666;
+}
+.image-text {
+    font-size: 16px;
+    font-weight: 500;
+}
