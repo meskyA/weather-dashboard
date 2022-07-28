@@ -1,6 +1,9 @@
 var APIKey = "2ddb14814bcbe05573b3e39270b994a1";
 var city;
 userCities =[];
+var lat;
+var lon;
+
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
