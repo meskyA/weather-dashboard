@@ -23,11 +23,15 @@ body {
     box-shadow: 0px 26px 10px -16 px #666666;
 }
 
-.carousel-inner {
-    border-radius: .75rem;
-    box-shadow: 0px 26px 10px -16 px #666666;
-}
 .image-text {
     font-size: 16px;
     font-weight: 500;
+}
+
+.forcastDiv { 
+    float:left; 
+    background-color: #336699;
+    color: white;
+    width: 18%;
+    margin-right: 2%;
 }
