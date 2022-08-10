@@ -9,7 +9,7 @@ function loadCities() {
 //city array from local storage
     var citiesStr = localStorage.getItem("cities");
     if (citiesStr !=null) {
-        userCities = JSON.parse(cities);
+        userCities = JSON.parse(citiesStr);
     }
      // iterate through array, building divs for each city
     for(var i = 0; i < userCities.length; i++){
@@ -33,7 +33,7 @@ function displayCityData(city) {
 
 function showWeather(city) {
     // adding another parameter after the query parameter
-    var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + city + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
     fetch(
     
@@ -43,7 +43,7 @@ function showWeather(city) {
     ).then(function(res){
         return res.json()
     }).then(function(response) {
-        console.log(response);
+        // console.log(response);
         
   
         // clear error text on successful call
@@ -95,9 +95,9 @@ function showWeather(city) {
 function showForecast(city) {
 
     var currentDate = new Date();
-    var ForacstDate;
+    var ForecastDate;
     var DateFiff = 0;
-    var ForacstDay = 0;
+    var ForecastDay = 0;
 
     queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
 
@@ -118,27 +118,27 @@ function showForecast(city) {
             for(var i = 0; i < forcastListLength; i++){
                 item = forcastList[i];
             // return to break the forecast loop   
-            if (ForacstDay >= 6)
+            if (ForecastDay>= 6)
             return;
 
             ForecastDate = new Date(item.dt * 1000);
-            DateFiff = Math.round((ForacstDate.getTime() - currentDate.getTime()) / (3600*1000));
+            DateFiff = Math.round((ForecastDate.getTime() - currentDate.getTime()) / (3600*1000));
 
             if (DateFiff >= 21) {
                 currentDate = ForecastDate;
 
                 var icon =item.weather [0].icon;
                 var iconURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-                $("#forcast-icon-" + ForacstDay).attr("src", iconURL);
+                $("#forcast-icon-" + ForecastDay).attr("src", iconURL);
 
-                var dateStr = ForacstDate.toLocaleDateString();
-                $("#forcast-date-" + ForacstDay).text(dateStr);
+                var dateStr = ForecastDate.toLocaleDateString();
+                $("#forcast-date-" + ForecastDay).text(dateStr);
 
-                $("#forcast-temp-" + ForacstDay).text('Temp: '+item.main.temp + ' °F');
-                $("#forcase-wind-" + ForacstDay).text('Wind: '+item.wind.speed + ' MPH');
-                $("#forcase-humidity-" + ForacstDay).text('Humidity: '+item.main.humidity + ' %');
+                $("#forcast-temp-" + ForecastDay).text('Temp: '+item.main.temp + ' °F');
+                $("#forcast-wind-" + ForecastDay).text('Wind: '+item.wind.speed + ' MPH');
+                $("#forcast-humidity-" + ForecastDay).text('Humidity: '+item.main.humidity + ' %');
 
-                ForacstDay++;
+                ForecastDay++;
 
             }
     }
