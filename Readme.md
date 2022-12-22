@@ -1,6 +1,6 @@
 # Weather-Dashboard 
 
-##Description
+## Description
 
 The purpose of this project is to develop a weather dashboard app that will be utilized by travelers. They will be able to search for a city and will be able to view the date, the name of the city and icon representation of current and 5 day weather forecast including temperature, humidity and wind-speed for that specific city.  The city will be added to the search history and will be stored in local-storage. 
 
@@ -30,4 +30,4 @@ This weather app is mobile compatible.
 
 
 - [Github-link](https://github.com/meskyA/weather-dashboard)
-- [Deployed-Link] (https://meskya.github.io/weather-dashboard/)
+- [Deployed-Link](https://meskya.github.io/weather-dashboard/)
